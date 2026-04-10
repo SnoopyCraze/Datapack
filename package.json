@@ -1,0 +1,74 @@
+{
+  "name": "datapack",
+  "version": "0.1.0",
+  "description": "The universal data toolkit. Define once, use everywhere — validate, transform, serialize, fetch, and store data with one cohesive API.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./decorators": {
+      "import": {
+        "types": "./dist/decorators.d.ts",
+        "default": "./dist/decorators.js"
+      },
+      "require": {
+        "types": "./dist/decorators.d.cts",
+        "default": "./dist/decorators.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "data",
+    "schema",
+    "validation",
+    "serialization",
+    "typescript",
+    "fetch",
+    "store",
+    "formdata",
+    "api",
+    "reactive"
+  ],
+  "author": "Zeran Johannsen",
+  "license": "MIT",
+  "homepage": "https://github.com/SnoopyCraze/datapack#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SnoopyCraze/datapack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SnoopyCraze/datapack/issues"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.1.0"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  }
+}
